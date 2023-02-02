@@ -28,24 +28,44 @@ code {
 a {
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 a:hover {
-  color: brown;
+  color: yellow;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  padding: 0 5px;
+}
+
+select {
+  border-radius: 30px;
+  border: none;
+  outline: none;
 }
 
 /*Header*/
 .header{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   background-color: rgb(136, 50, 11);
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
-  background-color: brown;
+  width: 150px;
+  height: 150px;
+  background: url('../img/logoCafeteria.png') no-repeat center center/cover;
+  cursor: pointer;
 }
 
 .menu {
@@ -71,16 +91,16 @@ a:hover {
 .contenedorInfoCard{
   margin-top: 15px;
   width: 80%;
-  height: 300px; 
+  height: 250px; 
 }
 
 #infoCard {
   display: flex;
+  height: 99%;
 }
 
 #infoCard_info {
   width: 80%;
-  height: 295px;
   border: 1px solid white;
   margin: 2px;
   padding: 10%;
@@ -91,7 +111,6 @@ a:hover {
 
 #infoCard_Menu {
   cursor: pointer;
-  height: 295px;
   width: 20%;
   border: 1px solid white;
   background-color: rgba(51, 51, 51, 0.849);
@@ -111,13 +130,86 @@ a:hover {
   width: 80%;
   height: 300px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
 }
 
+#cartaReservacion {
+  border: 1px solid white;
+  height: 98%;
+  width: 50%;
+  margin-left: 2px;
+}
+
+#tituloReservacion {
+  text-align: center;
+  width: 100%;
+}
+
 #parrafoReservacion {
-  width: 40%;
+  padding: 5px;
+}
+
+#reservacionFormulario {
+  margin: 0 2px 0 4px;
+  border: 1px solid white;
+  width: 50%;
+  height: 98%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#datos {
+  display: flex;
+  flex-direction: column;
+}
+
+#fechaYhora {
+  display: flex;
+  flex-direction: column;
+}
+
+#enviar {
+  margin-top: 20px;
+}
+
+/*Reservaciones*/
+.reservaciones{
+  width: 80%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+/*Tarjeta Menu*/
+.jumbotronMenu{
+  margin-top: 15px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.cartaMenu{
+  height: auto;
+  width: 25%;
+  border: 1px solid white;
+  text-align: justify;
+  background-color:  rgba(136, 51, 11, 0.938);
+  padding: 5px;
+}
+
+.titulosMenu{
+  text-align: center;
+  width: 100%;
+  text-decoration: underline;
+}
+
+.opcMenu{
+  margin-top: 5px;
 }
 
 /*Footer*/
