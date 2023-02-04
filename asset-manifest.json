@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c4cd2430.css",
+    "main.js": "/static/js/main.47108368.js",
+    "static/media/logoCafeteria.png": "/static/media/logoCafeteria.e760efc9d82989b993b9.png",
+    "index.html": "/index.html",
+    "main.c4cd2430.css.map": "/static/css/main.c4cd2430.css.map",
+    "main.47108368.js.map": "/static/js/main.47108368.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c4cd2430.css",
+    "static/js/main.47108368.js"
+  ]
+}
