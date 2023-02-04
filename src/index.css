@@ -64,7 +64,7 @@ select {
 .logo {
   width: 150px;
   height: 150px;
-  background: url('../img/logoCafeteria_adobe_express.svg') no-repeat center center/cover;
+  /* background: url('../img/logoCafeteria_adobe_express.svg') no-repeat center center/cover; */
   cursor: pointer;
 }
 
