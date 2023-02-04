@@ -13,7 +13,7 @@ function Header(){
                 <div className="menu">
                     <Link to={'reservacion'}><span><a>Reservación</a></span></Link>
                     <Link to={'menu'}><span><a>Menú</a></span></Link>
-                    <span> <a>Contáctactanos</a></span>
+                    <Link to={'contactanos'}><span><a>Contáctactanos</a></span></Link>
                 </div>
             </header>
         </React.Fragment>

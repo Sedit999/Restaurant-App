@@ -7,31 +7,34 @@ import { Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import db from "./firebase";
 import {collection, getDocs, collectionGroup} from "firebase/firestore"
+import Contactanos from './Components/Contactanos';
 
 function App() {
   const[postDataCafeCaliente, setPostDataCafeCaliente] = useState();
   const[postDataCafeFrio, setPostDataCafeFrio] = useState();
   const[postDataSandwiches, setPostDataSandwiches] = useState();
   const[postDataBebidas, setPostDataBebidas] = useState();
+  const[postDataReservacion, setPostDataReservacion] = useState();
+
+  const getReservaciones = async () => {
+    const snapshot = await getDocs(collection(db, 'reservaciones'))
+    setPostDataReservacion(snapshot.docs)
+  }
 
   const getCafeCaliente = async () => {
     const snapshot = await getDocs(collectionGroup(db,'cafeCaliente'))
-    console.log(snapshot.docs.map((doc) => doc.data()))
     setPostDataCafeCaliente(snapshot.docs)
 }
 const getCafeFrio = async () => {
   const snapshot = await getDocs(collectionGroup(db,'cafeFrio'))
-  console.log(snapshot.docs.map((doc) => doc.data()))
   setPostDataCafeFrio(snapshot.docs)
 }
 const getSandwiches = async () => {
   const snapshot = await getDocs(collectionGroup(db,'Sandwiches'))
-  console.log(snapshot.docs.map((doc) => doc.data()))
   setPostDataSandwiches(snapshot.docs)
 }
   const getBebidas = async () => {
     const snapshot = await getDocs(collectionGroup(db,'Bebidas'))
-    console.log(snapshot.docs.map((doc) => doc.data()))
     setPostDataBebidas(snapshot.docs)
 }
 
@@ -40,18 +43,17 @@ useEffect(() => {
   getCafeFrio();
   getSandwiches();
   getBebidas();
-  
+  getReservaciones()
 }, [])
-
-const menus = [postDataSandwiches, postDataBebidas, postDataCafeCaliente, postDataCafeFrio];
 
   return (
     <React.Fragment>
       <Routes>
         <Route exact path='/' element={<Layout/>}>
-          <Route index element={<Jumbotron/>}/>
-          <Route path='reservacion' element={<Reservacion/>}/>
+          <Route index element={<Jumbotron array={postDataReservacion}/>}/>
+          <Route path='reservacion' element={<Reservacion array={postDataReservacion}/>}/>
           <Route path='menu' element={<Menu array={[postDataBebidas, postDataCafeCaliente, postDataCafeFrio, postDataSandwiches]}/>}/>
+          <Route path='contactanos' element={<Contactanos/>}/>
         </Route>
       </Routes>
     </React.Fragment>

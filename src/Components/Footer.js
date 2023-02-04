@@ -4,7 +4,7 @@ function Footer(){
     return (
         <React.Fragment>
             <footer className="footer">
-                <p>Hola</p>
+                <p>Lorem ipsum dolor sit amet consectetur</p>
             </footer>
         </React.Fragment>
     )

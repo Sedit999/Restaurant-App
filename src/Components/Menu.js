@@ -3,8 +3,6 @@ import React from "react";
 let bebidas, cafeCaliente, cafeFrio, sandwiches
 
 function Menu({array}){
-  
-        console.log('menu')
         //bebidas
         function menuBebidas(menu) {
             bebidas = menu[0].map((doc) =>{return doc.data()})
@@ -98,7 +96,4 @@ function Menu({array}){
         </React.Fragment>
     )
 }
-/*{array &&
-                    array
-                }*/ 
 export default Menu;

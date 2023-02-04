@@ -74,6 +74,7 @@ select {
   display: flex;
   justify-content: space-around;
   margin-left: 20px;
+  padding: 5px;
 }
 
 /*Jumbotron*/
@@ -172,6 +173,14 @@ select {
 
 #enviar {
   margin-top: 20px;
+  border: none;
+  outline: none;
+  background-color: rgb(232, 206, 180);
+}
+
+#enviar:hover {
+  box-shadow: 1px 1px 2px rgb(248, 212, 4);
+  padding: 1px;
 }
 
 /*Reservaciones*/
@@ -212,6 +221,35 @@ select {
   margin-top: 5px;
 }
 
+/*Contacto*/
+.jumbotronContacto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedorContactoCard {
+  margin-top: 15px;
+  width: 80%;
+  height: 400px;
+}
+
+#contactoCard {
+  display: flex;
+  height: 99%;
+}
+
+#contactoCard_info {
+  width: 99%;
+  border: 1px solid white;
+  margin: 2px;
+  padding: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /*Footer*/
 .footer{
   display: flex;
@@ -222,4 +260,127 @@ select {
   width: 100%;
   background-color: rgb(136, 50, 11);
   color: rgb(226, 226, 226);
+}
+
+@media (max-width: 789px){
+  .header{
+    display: flex;
+    flex-direction: column;
+  }
+  .menu{
+    width: 95%;
+    margin: 0 10px;
+  }
+
+  /*Jumbotron*/
+.contenedorInfoCard{
+  width: 90%;
+  height: max-content; 
+}
+
+#infoCard {
+  display: flex;
+  flex-direction: column;
+}
+
+#infoCard_info {
+  width: 99%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#infoCard_Menu {
+  width: 99%;
+  height: 70px;
+}
+
+.reservacion{
+  width: 90%;
+  height: max-content;
+  flex-direction: column;
+}
+
+#cartaReservacion {
+  border: 1px solid white;
+  height: 100%;
+  width: 99%;
+  margin: 2px;
+}
+
+#reservacionFormulario {
+  margin: 2px;
+  padding:5px;
+  width: 99%;
+  height: max-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#datos {
+  display: flex;
+  flex-direction: column;
+}
+
+#fechaYhora {
+  display: flex;
+  flex-direction: column;
+}
+
+#enviar {
+  margin-top: 30px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background-color: rgb(232, 206, 180);
+}
+
+.reservaciones{
+  width: 90%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Tarjeta Menu*/
+.jumbotronMenu{
+  margin-top: 15px;
+  height: max-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cartaMenu{
+  height: max-content;
+  width: 90%;
+  border: 2px solid white;
+  text-align: justify;
+  background-color:  rgba(136, 51, 11, 0.938);
+  padding: 5px;
+  margin: 2px;
+}
+
+.titulosMenu{
+  text-align: center;
+  width: 100%;
+  text-decoration: underline;
+}
+
+.opcMenu{
+  margin-top: 5px;
+}
+
+/*Contacto*/
+.contenedorContactoCard {
+  width: 90%;
+  height: 500px;
+}
+
 }
