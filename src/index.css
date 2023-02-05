@@ -62,9 +62,9 @@ select {
 }
 
 .logo {
-  width: 150px;
-  height: 150px;
-  background: url('../img/logoCafeteria_adobe_express.svg') no-repeat center center/cover;
+  width: 192px;
+  height: 192px;
+  background: url('../img/logoCafeteria.png') no-repeat center center/cover;
   cursor: pointer;
 }
 
