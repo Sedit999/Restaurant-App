@@ -5,7 +5,7 @@ function Header(){
     return(
         <React.Fragment>
             <header className="header">
-                <Link to={'/'}>                    <a>
+                <Link to={'/home'}>                    <a>
                         <div className="logo">
                         </div>
                     </a>
