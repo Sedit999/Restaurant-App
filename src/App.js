@@ -46,11 +46,12 @@ useEffect(() => {
   getReservaciones()
 }, [])
 
+//<Routes basename={process.env.PUBLIC_URL}>
+
   return (
     <React.Fragment>
-      <Routes basename={process.env.PUBLIC_URL}>
-        <Route exact path='/
-Restaurant-App' element={<Layout/>}>
+      <Routes>
+        <Route exact path='/' element={<Layout/>}>
           <Route index element={<Jumbotron array={postDataReservacion}/>}/>
           <Route path='/reservacion' element={<Reservacion array={postDataReservacion}/>}/>
           <Route path='/menu' element={<Menu array={[postDataBebidas, postDataCafeCaliente, postDataCafeFrio, postDataSandwiches]}/>}/>
