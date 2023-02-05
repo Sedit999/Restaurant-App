@@ -7,7 +7,7 @@ import App from './App';
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
-
+<link rel="manifest" href="%PUBLIC_URL%/manifest.json"></link>
 root.render(
   <StrictMode>
     <BrowserRouter>
