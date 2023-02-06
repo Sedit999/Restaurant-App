@@ -25,13 +25,13 @@ code {
   box-sizing: border-box;
 }
 
-a {
+#navegacion {
   text-decoration: none;
   color: white;
   cursor: pointer;
 }
 
-a:hover {
+#navegacion:hover {
   color: yellow;
 }
 
