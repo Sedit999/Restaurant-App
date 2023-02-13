@@ -21,6 +21,7 @@ function Jumbotron({array}){
 
     const[fechaSeleccionada, setFechaSeleccionada] = useState();
     const[valores, setValores] = useState(valoreIniciales);
+   
 
     const handleInputChange = e =>{
         const {name, value} = e.target;
@@ -30,40 +31,39 @@ function Jumbotron({array}){
     const handleSubmit = e=> {
         e.preventDefault();
         agregar(valores);
-        setTimeout(()=>{
+        /* setTimeout(()=>{
             window.location.href = window.location.href;
-        },2000)
+        },2000) */
         
     }
 
-    const getHorarios = async () => {
-        horasDisponibles = [];
-        function Reservaciones(fechasReservadas) {
-            reservaciones = fechasReservadas.map((doc) =>{return doc.data()})
-        } 
-        Reservaciones(array)
-        await reservaciones.forEach((element) => {
-            element.Fecha === fechaSeleccionada ? horariosOcupados.push(element.Hora) : horariosOcupados = [true];
-         
+    function Reservaciones(fechasReservadas) {
+        reservaciones = fechasReservadas.map((doc) =>{return doc.data()})
+    } 
+    Reservaciones(array)
+    useEffect(() =>{
+        const getHorarios = async () => {
+            horasDisponibles = [];
+            /* Reservaciones(array) */
+            await reservaciones.forEach((element) => {
+                element.Fecha === fechaSeleccionada ? horariosOcupados.push(element.Hora) : horariosOcupados = [true];
+            }
+                )
+                horariosOcupados === undefined ? horariosOcupados = ['']:
+                horariosOcupados.forEach((ocupado)=>{
+                    horasPosibles.forEach((posible)=>{
+                        if(posible !== ocupado){
+                        horasDisponibles.push(posible)
+                        }
+                    })
+                   })
         }
-            )
-            horariosOcupados === undefined ? horariosOcupados = ['']:
-            horariosOcupados.forEach((ocupado)=>{
-                horasPosibles.forEach((posible)=>{
-                    if(posible !== ocupado){
-                        
-                    horasDisponibles.push(posible)
-                        
-                        
-                    }
-                })
-               })
-              
-    }
+        getHorarios();
+    },[fechaSeleccionada])
 
-useEffect(() =>{
-    getHorarios();
-},[fechaSeleccionada])
+    
+
+
 
     return(
         <React.Fragment>
@@ -73,7 +73,7 @@ useEffect(() =>{
                     <div id="infoCard">
                         <p id="infoCard_info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum blanditiis molestiae iste tempora obcaecati repellat aperiam sed hic, perferendis culpa?</p>
                         <Link to={'menu'}id="infoCard_Menu">
-                            <div >
+                            <div id="navegacion">
                             Revisa nuestro menú
                             </div>
                         </Link>

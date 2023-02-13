@@ -1,14 +1,12 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import {agregar} from './ManejoFirestore';
-
-let reservaciones;
 let horariosOcupados;
-
-let horasDisponibles = []
+let horasDisponibles = [];
+let reservaciones;
 const horasPosibles = ["9:00","9:15","9:30","9:45","10:00","10:15","10:30","10:45","11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45","13:00","13:15","13:30","13:45","14:00","14:15","14:30","14:45","15:00","15:15","15:30","15:45","16:00", "16:15","16:30","16:45","17:00","17:15","17:30","17:45","18:00", "18:15","18:30","18:45","19:00","19:15","19:30","19:45","20:00","20:15","20:30","20:45","21:00","21:15","21:30","21:45","22:00"];
-
 function Reservacion({array}){
+    
     const valoreIniciales = {
         Nombre: '',
         Telefono: '',
@@ -28,35 +26,36 @@ function Reservacion({array}){
     const handleSubmit = e=> {
         e.preventDefault();
         agregar(valores);
-        setTimeout(()=>{
+        /* setTimeout(()=>{
             window.location.href = window.location.href;
-        },2000)
+        },2000) */
         
     }
-
-    const getHorarios = async () => {
-        horasDisponibles = [];
-        function Reservaciones(fechasReservadas) {
+    function Reservaciones(fechasReservadas) {
             reservaciones = fechasReservadas.map((doc) =>{return doc.data()})
         } 
-        Reservaciones(array)
-        await reservaciones.forEach((element) => {
-            element.Fecha === fechaSeleccionada ? horariosOcupados.push(element.Hora) : horariosOcupados = [true];
-         
+    
+        let datosDeReservaciones = array
+        Reservaciones(datosDeReservaciones)
+    useEffect(() =>{        
+        const getHorarios = async () => {
+            horasDisponibles = [];
+            /* Reservaciones(datosDeReservaciones) */
+            await reservaciones.forEach((element) => {
+                element.Fecha === fechaSeleccionada ? horariosOcupados.push(element.Hora) : horariosOcupados = [true];
+            }
+                )
+                horariosOcupados === undefined ? horariosOcupados = ['']:
+                horariosOcupados.forEach((ocupado)=>{
+                    horasPosibles.forEach((posible)=>{
+                        if(posible !== ocupado){    
+                        horasDisponibles.push(posible)   
+                        }
+                    })
+                   })
         }
-            )
-            horariosOcupados === undefined ? horariosOcupados = ['']:
-            horariosOcupados.forEach((ocupado)=>{
-                horasPosibles.forEach((posible)=>{
-                    if(posible !== ocupado){    
-                    horasDisponibles.push(posible)   
-                    }
-                })
-               })
-    }
-
-    useEffect(() =>{
         getHorarios();
+       
     },[fechaSeleccionada])
 
     return(

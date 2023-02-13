@@ -51,11 +51,11 @@ useEffect(() => {
   return (
     <React.Fragment>
       <Routes>
-        <Route exact path='/' element={<Layout/>}>
+        <Route exact path='/Restaurant-App' element={<Layout/>}>
           <Route index element={<Jumbotron array={postDataReservacion}/>}/>
-          <Route path='/reservacion' element={<Reservacion array={postDataReservacion}/>}/>
-          <Route path='/menu' element={<Menu array={[postDataBebidas, postDataCafeCaliente, postDataCafeFrio, postDataSandwiches]}/>}/>
-          <Route path='/contactanos' element={<Contactanos/>}/>
+          <Route path='/Restaurant-App/reservacion' element={<Reservacion array={postDataReservacion}/>}/>
+          <Route path='/Restaurant-App/menu' element={<Menu array={[postDataBebidas, postDataCafeCaliente, postDataCafeFrio, postDataSandwiches]}/>}/>
+          <Route path='/Restaurant-App/contactanos' element={<Contactanos/>}/>
         </Route>
       </Routes>
     </React.Fragment>
