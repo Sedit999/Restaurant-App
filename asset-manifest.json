@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Restaurant-App/static/css/main.9a1ea271.css",
-    "main.js": "/Restaurant-App/static/js/main.024ecacc.js",
+    "main.js": "/Restaurant-App/static/js/main.77186bff.js",
     "static/media/logoCafeteria.png": "/Restaurant-App/static/media/logoCafeteria.e760efc9d82989b993b9.png",
     "index.html": "/Restaurant-App/index.html",
     "main.9a1ea271.css.map": "/Restaurant-App/static/css/main.9a1ea271.css.map",
-    "main.024ecacc.js.map": "/Restaurant-App/static/js/main.024ecacc.js.map"
+    "main.77186bff.js.map": "/Restaurant-App/static/js/main.77186bff.js.map"
   },
   "entrypoints": [
     "static/css/main.9a1ea271.css",
-    "static/js/main.024ecacc.js"
+    "static/js/main.77186bff.js"
   ]
 }
